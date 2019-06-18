@@ -14,14 +14,22 @@
               <router-link tag="li" to="/friend" active-class="active"><a>交友</a></router-link>
               <router-link tag="li" to="/spit" active-class="active"><a>吐槽</a></router-link>
               <router-link tag="li" to="/recruit" active-class="active"><a>招聘</a></router-link>
-
             </ul>
             <form class="sui-form sui-form pull-left">
               <input type="text" placeholder="输入关键词..."/>
               <span class="btn-search fa fa-search"></span>
             </form>
+            <div class="sui-nav pull-right info" v-if="user.name!==undefined">
+              <li><a href="/manager" class="notice">{{user.name}}</a></li>
+              <li><a @click="logout" class="notice">退出登陆</a></li>
+              <li><a href="/manager"  class="homego"><img :src="user.avatar" width="50px" height="50px" :alt="user.name" /></a></li>
+            </div>
+            <div class="sui-nav pull-right info" v-if="user.name===undefined">
+              <router-link to="/login"><li style="font-size: 15px">登陆</li></router-link>
+            </div>
             <div class="sui-nav pull-right info">
-              <li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li>
+              <!--<li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li>
+              <li><a href="~/assets/other-notice.html" target="_blank" class="notice">{{user.name}}</a></li>-->
               <li class="hover"><span class="fa fa-plus "></span>
                 <ul class="hoverinfo">
                   <li><i class="fa fa-share-alt" aria-hidden="true"></i> <a href="~/assets/headline-submit.html">去分享</a>
@@ -34,8 +42,8 @@
                                                                             target="_blank">发约会</a></li>
                 </ul>
               </li>
-              <li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img
-                src="~/assets/img/widget-photo.png" alt="用户头像"/></a></li>
+              <!--<li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img
+                src="~/assets/img/widget-photo.png" alt="用户头像"/></a></li>-->
             </div>
           </div>
         </div>
@@ -99,7 +107,7 @@
                   微博
                 </dd>
                 <dd>
-                  twitter
+                  微信公众号
                 </dd>
               </dl>
               <div class="xuke">
@@ -129,6 +137,22 @@
   import '~/assets/plugins/font-awesome/css/font-awesome.min.css'
   import '~/assets/css/widget-base.css'
   import '~/assets/css/widget-head-foot.css'
+  import {getUser,removeUser} from "../utils/auth"
 
-  export default {}
+  export default {
+    data(){
+      return {
+        user:{}
+      }
+    },
+    created(){
+      this.user = getUser()
+    },
+    methods:{
+      logout(){
+        removeUser()
+        location.href='/'
+      }
+    }
+  }
 </script>

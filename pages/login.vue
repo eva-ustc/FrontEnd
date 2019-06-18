@@ -66,7 +66,7 @@
                                                                      style="font-size:12px;">记住登录状态</span> </label>
             <button type="button" class="sui-btn btn-danger btn-yes" @click="login">登 录</button>
           </div>
-          <div id="weixin"></div>
+          <!--<div id="weixin"></div>-->
         </form>
       </div>
     </div>
@@ -75,7 +75,7 @@
 <script>
   import '~/assets/css/page-sj-person-loginsign.css'
   import userApi from '@/api/user'
-  // import {setUser,getUser} from '@/utils/auth'
+  import {setUser,getUser} from '@/utils/auth'
 
   export default {
     data() {
@@ -104,17 +104,12 @@
           })
         })
       },
-      login() {
-      },
-      /*
       login(){
         userApi.login(this.mobile,this.password ).then( res=> {
           if(res.data.flag){
             //保存用户信息
             setUser(res.data.data.token, res.data.data.name, res.data.data.avatar)
-
             location.href='/manager' //用户中心
-
           }else{
             this.$message( {
               message: res.data.message,
@@ -124,9 +119,9 @@
             this.password=''
           }
         })
-      } */
-    },
-    mounted() {
+      }
+    }
+    /*mounted() {
       var obj = new WxLogin({
         id: 'weixin',
         appid: 'wx3bdb1192c22883f3',
@@ -134,10 +129,10 @@
         redirect_uri: 'http://note.java.itcast.cn/weixinlogin'
       })
     },
-    head: {
+    head: { // Vue中引入js,css的方式
       script: [
         {src: 'http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js'}
       ]
-    }
+    }*/
   }
 </script>
