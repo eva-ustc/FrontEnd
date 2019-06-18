@@ -11,7 +11,7 @@
               <router-link tag="li" to="/" active-class="active" exact><a>首页</a></router-link>
               <router-link tag="li" to="/qa" active-class="active"><a>问答</a></router-link>
               <router-link tag="li" to="/gathering" active-class="active"><a>活动</a></router-link>
-              <router-link tag="li" to="/friend" active-class="active"><a>交友</a></router-link>
+              <!--<router-link tag="li" to="/friend" active-class="active"><a>交友</a></router-link>-->
               <router-link tag="li" to="/spit" active-class="active"><a>吐槽</a></router-link>
               <router-link tag="li" to="/recruit" active-class="active"><a>招聘</a></router-link>
             </ul>
