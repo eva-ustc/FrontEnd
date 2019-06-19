@@ -6,7 +6,7 @@
       <div class="wrapper">
         <div class="sui-navbar">
           <div class="navbar-inner">
-            <a href="index-logined.html" class="sui-brand"><img src="~/assets/img/ustc_logo.png" alt="社交"/></a>
+            <a href="/" class="sui-brand"><img src="~/assets/img/ustc_logo.png" alt="社交"/></a>
             <ul class="sui-nav">
               <router-link tag="li" to="/" active-class="active" exact><a>首页</a></router-link>
               <router-link tag="li" to="/qa" active-class="active"><a>问答</a></router-link>
@@ -27,9 +27,9 @@
             <div class="sui-nav pull-right info" v-if="user.name===undefined">
               <router-link to="/login"><li style="font-size: 15px">登陆</li></router-link>
             </div>
-            <div class="sui-nav pull-right info">
-              <!--<li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li>
-              <li><a href="~/assets/other-notice.html" target="_blank" class="notice">{{user.name}}</a></li>-->
+            <!--<div class="sui-nav pull-right info">
+              &lt;!&ndash;<li><a href="~/assets/other-notice.html" target="_blank" class="notice">通知</a></li>
+              <li><a href="~/assets/other-notice.html" target="_blank" class="notice">{{user.name}}</a></li>&ndash;&gt;
               <li class="hover"><span class="fa fa-plus "></span>
                 <ul class="hoverinfo">
                   <li><i class="fa fa-share-alt" aria-hidden="true"></i> <a href="~/assets/headline-submit.html">去分享</a>
@@ -42,9 +42,9 @@
                                                                             target="_blank">发约会</a></li>
                 </ul>
               </li>
-              <!--<li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img
-                src="~/assets/img/widget-photo.png" alt="用户头像"/></a></li>-->
-            </div>
+              &lt;!&ndash;<li><a href="~/assets/person-homepage.html" target="_blank" class="homego"><img
+                src="~/assets/img/widget-photo.png" alt="用户头像"/></a></li>&ndash;&gt;
+            </div>-->
           </div>
         </div>
       </div>
